@@ -78,7 +78,7 @@ const Login = () => {
   const setDemoCredentials = (role: string) => {
     switch (role) {
       case 'doctor':
-        form.setValue('email', 'doctorlogin@gmail.com'); // Updated to the working user
+        form.setValue('email', 'doctorlogin@gmail.com');
         form.setValue('password', '12345678');
         break;
       case 'admin':
@@ -270,12 +270,17 @@ const Login = () => {
           </div>
         </GlassCard>
 
-        <p className="text-center mt-6 text-sm text-muted-foreground">
-          Don't have an account?{' '}
-          <Link to="/signup" className="text-primary underline hover:text-primary/90 transition-colors">
-            Create an account
-          </Link>
-        </p>
+        <div className="text-center mt-6 space-y-2">
+          <p className="text-sm text-muted-foreground">
+            Don't have an account?{' '}
+            <Link to="/signup" className="text-primary underline hover:text-primary/90 transition-colors">
+              Create an account
+            </Link>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Made with ❤️ by Abdikhafar
+          </p>
+        </div>
       </div>
     </div>
   );
