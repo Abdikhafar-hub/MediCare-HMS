@@ -26,6 +26,11 @@ const Login = () => {
   const [showDemoCredentials, setShowDemoCredentials] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
 
+  // Log auth state
+  useEffect(() => {
+    console.log('Login page state:', { authError, authLoading, isAuthenticated });
+  }, [authError, authLoading, isAuthenticated]);
+
   // Get the redirect path from location state or default to dashboard
   const from = (location.state as any)?.from?.pathname || '/dashboard';
 

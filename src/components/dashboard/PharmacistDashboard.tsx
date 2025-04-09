@@ -78,7 +78,7 @@ const PharmacistDashboard: React.FC<PharmacistDashboardProps> = ({ stats, isLoad
               </thead>
               <tbody>
                 <tr className="border-b hover:bg-muted/40 transition-colors">
-                  <td className="py-3 px-4">Maria Rodriguez</td>
+                  <td className="py-3 px-4">Nasra Mohamed</td>
                   <td className="py-3 px-4">Lisinopril 10mg</td>
                   <td className="py-3 px-4">Dr. Thompson</td>
                   <td className="py-3 px-4 text-right">
@@ -86,7 +86,7 @@ const PharmacistDashboard: React.FC<PharmacistDashboardProps> = ({ stats, isLoad
                   </td>
                 </tr>
                 <tr className="border-b hover:bg-muted/40 transition-colors">
-                  <td className="py-3 px-4">David Chen</td>
+                  <td className="py-3 px-4">David Kyalo</td>
                   <td className="py-3 px-4">Metformin 500mg</td>
                   <td className="py-3 px-4">Dr. Garcia</td>
                   <td className="py-3 px-4 text-right">
@@ -94,7 +94,7 @@ const PharmacistDashboard: React.FC<PharmacistDashboardProps> = ({ stats, isLoad
                   </td>
                 </tr>
                 <tr className="border-b hover:bg-muted/40 transition-colors">
-                  <td className="py-3 px-4">Sarah Johnson</td>
+                  <td className="py-3 px-4">Susan Ndungu</td>
                   <td className="py-3 px-4">Amoxicillin 500mg</td>
                   <td className="py-3 px-4">Dr. Williams</td>
                   <td className="py-3 px-4 text-right">

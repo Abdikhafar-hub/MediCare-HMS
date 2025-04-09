@@ -91,18 +91,18 @@ const LabTechnicianDashboard: React.FC<LabTechnicianDashboardProps> = ({ stats, 
                 ) : (
                   <>
                     <tr className="border-b hover:bg-muted/40 transition-colors">
-                      <td className="py-3 px-4">James Wilson</td>
+                      <td className="py-3 px-4">Nasra Mohamed</td>
                       <td className="py-3 px-4">Complete Blood Count</td>
-                      <td className="py-3 px-4">Dr. Thompson</td>
+                      <td className="py-3 px-4">Dr. Andrew</td>
                       <td className="py-3 px-4">Today</td>
                       <td className="py-3 px-4 text-right">
                         <Button variant="outline" size="sm">Process Sample</Button>
                       </td>
                     </tr>
                     <tr className="border-b hover:bg-muted/40 transition-colors">
-                      <td className="py-3 px-4">Lisa Brown</td>
+                      <td className="py-3 px-4">Mohamed Amin</td>
                       <td className="py-3 px-4">Lipid Panel</td>
-                      <td className="py-3 px-4">Dr. Roberts</td>
+                      <td className="py-3 px-4">Dr. Samuel</td>
                       <td className="py-3 px-4">Today</td>
                       <td className="py-3 px-4 text-right">
                         <Button variant="outline" size="sm">Process Sample</Button>
@@ -111,7 +111,7 @@ const LabTechnicianDashboard: React.FC<LabTechnicianDashboardProps> = ({ stats, 
                     <tr className="border-b hover:bg-muted/40 transition-colors">
                       <td className="py-3 px-4">Marcus Johnson</td>
                       <td className="py-3 px-4">Urinalysis</td>
-                      <td className="py-3 px-4">Dr. Garcia</td>
+                      <td className="py-3 px-4">Dr. Geoffrey</td>
                       <td className="py-3 px-4">Yesterday</td>
                       <td className="py-3 px-4 text-right">
                         <Button variant="outline" size="sm">Process Sample</Button>
@@ -140,7 +140,7 @@ const LabTechnicianDashboard: React.FC<LabTechnicianDashboardProps> = ({ stats, 
               </thead>
               <tbody>
                 <tr className="border-b hover:bg-muted/40 transition-colors">
-                  <td className="py-3 px-4">Sarah Parker</td>
+                  <td className="py-3 px-4">issack Muli</td>
                   <td className="py-3 px-4">Blood Glucose</td>
                   <td className="py-3 px-4">Today, 9:30 AM</td>
                   <td className="py-3 px-4 text-right">
@@ -148,7 +148,7 @@ const LabTechnicianDashboard: React.FC<LabTechnicianDashboardProps> = ({ stats, 
                   </td>
                 </tr>
                 <tr className="border-b hover:bg-muted/40 transition-colors">
-                  <td className="py-3 px-4">Thomas Lee</td>
+                  <td className="py-3 px-4">Thomas Okinyi</td>
                   <td className="py-3 px-4">Thyroid Panel</td>
                   <td className="py-3 px-4">Today, 10:15 AM</td>
                   <td className="py-3 px-4 text-right">
@@ -156,7 +156,7 @@ const LabTechnicianDashboard: React.FC<LabTechnicianDashboardProps> = ({ stats, 
                   </td>
                 </tr>
                 <tr className="border-b hover:bg-muted/40 transition-colors">
-                  <td className="py-3 px-4">Anna Rodriguez</td>
+                  <td className="py-3 px-4">Anne Kamau</td>
                   <td className="py-3 px-4">Liver Function</td>
                   <td className="py-3 px-4">Today, 11:00 AM</td>
                   <td className="py-3 px-4 text-right">

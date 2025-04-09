@@ -1,16 +1,30 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '@/components/ui-custom/Button';
 import { useAuth } from '@/context/AuthContext';
 import { ArrowRightIcon, CheckCircle2Icon, HeartPulseIcon, ShieldCheckIcon, StarIcon, Users2Icon, MenuIcon, XIcon } from 'lucide-react';
 
 const Index = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Redirect unauthenticated users to /login
+  useEffect(() => {
+    console.log('Index: isAuthenticated:', isAuthenticated, 'isLoading:', isLoading);
+    if (!isLoading && !isAuthenticated) {
+      console.log('Redirecting to /login');
+      navigate('/login', { replace: true });
+    }
+  }, [isAuthenticated, isLoading, navigate]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  if (isLoading) {
+    return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -92,51 +106,50 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative h-screen md:min-h-screen flex items-center bg-gradient-to-b from-gray-50 to-blue-50 pt-20">
-  <div 
-    className="absolute inset-0 bg-center bg-cover bg-no-repeat md:bg-cover md:bg-center z-0"
-    style={{
-      backgroundImage: `url('https://res.cloudinary.com/ddkkfumkl/image/upload/v1742584136/qvkxaqhoviht0yjogpdt.png')`,
-    }}
-  >
-    <div className="absolute inset-0 bg-black/40"></div> {/* Overlay for better text readability */}
-  </div>
+        <div 
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat md:bg-cover md:bg-center z-0"
+          style={{
+            backgroundImage: `url('https://res.cloudinary.com/ddkkfumkl/image/upload/v1742584136/qvkxaqhoviht0yjogpdt.png')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div> {/* Overlay for better text readability */}
+        </div>
 
-  <div className="container mx-auto px-4 py-12 md:py-24 relative z-10">
-    <div className="text-center space-y-6 md:space-y-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-white">
-        Modern Healthcare Management Solution
-      </h1>
-      <p className="text-lg md:text-xl text-gray-200">
-        A comprehensive hospital management system that streamlines operations, improves patient care, and enhances overall efficiency.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        {isAuthenticated ? (
-          <Link to="/dashboard">
-            <Button size="lg" className="w-full sm:w-auto bg-blue-600 text-white hover:bg-blue-700" glassEffect>
-              Go to Dashboard
-              <ArrowRightIcon className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        ) : (
-          <>
-            <Link to="/signup">
-              <Button size="lg" className="w-full sm:w-auto text-black bg-white hover:bg-gray-100" glassEffect>
-                Get Started
-                <ArrowRightIcon className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/login">
-              <Button size="lg" className="w-full sm:w-auto bg-blue-600 text-white hover:bg-blue-700">
-                Log In
-              </Button>
-            </Link>
-          </>
-        )}
-      </div>
-    </div>
-  </div>
-</section>
-
+        <div className="container mx-auto px-4 py-12 md:py-24 relative z-10">
+          <div className="text-center space-y-6 md:space-y-8 max-w-3xl mx-auto">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-white">
+              Modern Healthcare Management Solution
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200">
+              A comprehensive hospital management system that streamlines operations, improves patient care, and enhances overall efficiency.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {isAuthenticated ? (
+                <Link to="/dashboard">
+                  <Button size="lg" className="w-full sm:w-auto bg-blue-600 text-white hover:bg-blue-700" glassEffect>
+                    Go to Dashboard
+                    <ArrowRightIcon className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              ) : (
+                <>
+                  <Link to="/signup">
+                    <Button size="lg" className="w-full sm:w-auto text-black bg-white hover:bg-gray-100" glassEffect>
+                      Get Started
+                      <ArrowRightIcon className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                  <Link to="/login">
+                    <Button size="lg" className="w-full sm:w-auto bg-blue-600 text-white hover:bg-blue-700">
+                      Log In
+                    </Button>
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section id="features" className="py-12 md:py-24 bg-gray-50">
