@@ -12,9 +12,9 @@ const Index = () => {
   // Redirect unauthenticated users to /login
   useEffect(() => {
     console.log('Index: isAuthenticated:', isAuthenticated, 'isLoading:', isLoading);
-    if (!isLoading && !isAuthenticated) {
-      console.log('Redirecting to /login');
-      navigate('/login', { replace: true });
+    if (!isLoading && isAuthenticated) {
+      console.log('Redirecting to /dashboard');
+      navigate('/dashboard', { replace: true });
     }
   }, [isAuthenticated, isLoading, navigate]);
 
